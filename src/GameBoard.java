@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Random;
 
 
@@ -33,5 +34,17 @@ public class GameBoard {
 			}
 		}
 		return true;
+	}
+	
+	public List<Cell> nextMoves() {
+		List<Cell> m = null;
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board[i].length; j++) {
+				if (board[i][j].color == 'B') {
+					m.add(board[i][j]);
+				}
+			}
+		}
+		return m;
 	}
 }
